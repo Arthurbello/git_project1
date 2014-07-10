@@ -1,0 +1,15 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+<head>
+    <style>
+        p.one {font-size: 30px}
+    </style>
+</head>
+    <p class="one">Your Username:{{ user.username }}<br></p>
+    <p class="one">Your first name:{{ user.first_name }}<br></p>
+    <p class="one">Your last name:{{ user.last_name }}</p>
+    <form method="link" action="{% url 'edit' %}">
+    <input type="submit" value="edit profile">
+    </form>
+{% endblock content %}

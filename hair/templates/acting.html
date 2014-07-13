@@ -1,1 +1,17 @@
-{% extends 'base_template.html' %}
+{% extends 'base.html' %}
+{% block content %}
+    <head>
+        <style>
+            li {font-size: 25px}
+        </style>
+    </head>
+<h1 style="text-align: center">Please choose one</h1>
+     {% if not great %}
+       <p style="text-align: center; font-size: 20px">No posts available</p>
+    {% endif %}
+<ul style="list-style-type: armenian">
+    {% for i in great %}
+        <li><a href="{% url "view_acting_post" i.id %}" >{{ i.title }} </a> by {{ i.author }}</li>
+    {% endfor %}
+</ul>
+{% endblock content %}

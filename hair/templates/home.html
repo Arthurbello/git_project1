@@ -1,13 +1,54 @@
-{% extends 'base_template.html' %}
+{% extends 'base.html' %}
 {% load staticfiles %}
 {% block content %}
-    <h1 style="font-family: cursive;font-size: 50px; text-align: center;">Welcome</h1><hr>
-    <p style="font-family: jester;font-size: 20px;">Hello, this website is for people who find it hard to find inspiration. Start out by choosing
-    a specific category. Then you will see a list of people who struggled before they were able to make it. An example is Ben Carson(shown below)<br><img src="{% static 'img/Ben_Carson.jpg' %}" style="height: 200px">
-    Carson was born in Detroit, Michigan the son of Sonya (née Copeland), a Seventh-day Adventist; and Robert Solomon Carson, a Baptist Minister.[1] His parents were both from rural Georgia. When he was 8 years old, his parents divorced and he and his 10-year-old brother, Curtis, were raised by their mother. He attended Southwestern High School in Southwest Detroit, and graduated
-        from Yale University, where he majored in premed with a minor in psychology. He received his M.D. from the University of Michigan Medical School. To continue reading his story, <a href="{% url 'ben_carson' %}">CLICK HERE</a>
-    </p>
+    <head>
+    <script type="text/javascript">
+<!--
+var image1=new Image()
+image1.src="{% static 'img/loves.jpg' %}"
+var image2=new Image()
+image2.src="{% static 'img/moni.jpg' %}"
+var image3=new Image()
+image3.src="{% static 'img/we.jpg' %}"
+var image4=new Image()
+image4.src="{% static 'img/four.jpg' %}"
 
+//-->
+</script>
+    </head>
+
+
+<body>
+    <h1 style="font-family: cursive;font-size: 50px; text-align: center;">Yo</h1><hr>
+<p style="text-align: center; opacity: 1">
+    <img src="{% static 'img/Ben_Carson.jpg' %}" name="slide" width="400" height="400" style="opacity: 1"/>
+</p>
+    <script>
+<!--
+//variable that will increment through the images
+var step=1
+function slideit(){
+//if browser does not support the image object, exit.
+if (!document.images)
+return
+document.images.slide.src=eval("image"+step+".src")
+if (step<4)
+step++
+else
+step=1
+//call function "slideit()" every 2.5 seconds
+setTimeout("slideit()",4000)
+}
+slideit()
+//-->
+</script>
+
+
+
+    <h2 style="font-family: jester;font-size: 40px; text-align: center; text-decoration: underline">Latest posts
+    </h2>
+     {{ post.title | random }}
+</body>
 
 
 

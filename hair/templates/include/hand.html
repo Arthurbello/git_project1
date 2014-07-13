@@ -1,0 +1,30 @@
+ <head>
+     <style>
+       div.ultra {position: fixed;
+        height: 132px;
+        left: 0;
+        top: 185px;
+        width: 24px;
+        }
+       div.two {display: inline-block ;border-color: black; border-style: solid; font-size: 30px; padding: 10px; width: 200px; text-align: center}
+        div.two {margin-left: 30px; border-style: solid; border-color: white; border-radius: 20px}
+         .two:hover {background-color: white}
+         </style>
+ </head>
+<div class="ultra">
+    <div class="two">
+    <a href="{% url "edit" %}">See your posts</a>
+    </div>
+    <div class="two"">
+    <a href="{% url "messages_inbox" %}">Inbox</a>
+    </div>
+    <div class="two">
+    <a href="{% url "messages_outbox" %}">Sent</a>
+    </div>
+    <div class="two">
+    <a href="{% url "messages_compose" %}">Compose</a>
+    </div>
+ <div class="two">
+    <a href="{% url "messages_trash" %}">Trash</a>
+    </div>
+  </div>

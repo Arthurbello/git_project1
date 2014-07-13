@@ -1,4 +1,9 @@
 from django.contrib import admin
-from hair.models import PhoneUser
+from django.contrib.auth.models import User
+from hair.models import *
 
-admin.site.register(PhoneUser)
+admin.site.register(Post)
+admin.site.register(Categories)
+admin.site.register(Comment)
+
+
